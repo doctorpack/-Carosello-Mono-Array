@@ -7,8 +7,8 @@ const arrImages = [
 ];
 
 const eleSlider = document.querySelector('.slider');
-const eleBtnLeft = document.querySelector('.btn-left');
-const eleBtnRight = document.querySelector('.btn-right');
+const eleBtnbottom = document.querySelector('.btn-bottom');
+const eleBtnUp = document.querySelector('.btn-up');
 
 // creaare i tag immagine nell'html
 for (let i = 0; i < arrImages.length; i++) {
@@ -29,7 +29,7 @@ const listEleImg = document.querySelectorAll('.slider-img'); // non e' un array 
 let activeIndex = 0;
 
 // aggiungere gli event listeners ai due bottoni
-eleBtnRight.addEventListener('click', function () {
+eleBtnUp.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 
@@ -39,13 +39,13 @@ eleBtnRight.addEventListener('click', function () {
 	// aggiungere la classe active all'elemento successivo
 	listEleImg[activeIndex].classList.add('active');
 
-	eleBtnLeft.classList.remove('hidden');
+	eleBtnbottom.classList.remove('hidden');
 	if (activeIndex === listEleImg.length - 1) {
-		eleBtnRight.classList.add('hidden');
+		eleBtnUp.classList.add('hidden');
 	}
 });
 
-eleBtnLeft.addEventListener('click', function () {
+eleBtnbottom.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 
@@ -55,8 +55,8 @@ eleBtnLeft.addEventListener('click', function () {
 	// aggiungere la classe active all'elemento successivo
 	listEleImg[activeIndex].classList.add('active');
 
-	eleBtnRight.classList.remove('hidden');
+	eleBtnUp.classList.remove('hidden');
 	if (activeIndex === 0) {
-		eleBtnLeft.classList.add('hidden');
+		eleBtnbottom.classList.add('hidden');
 	}
 });
